@@ -19,11 +19,12 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Play and Win`,
-        short_name: `starter`,
+        short_name: `Play&Win`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        //display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/icon-512x512.png`,
         icons: [
           {
