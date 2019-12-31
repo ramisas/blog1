@@ -39,6 +39,7 @@ module.exports = {
         apiURL: 'http://109.236.81.180:1337',
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
           'article',
+          'course',
           'user'
         ],
         queryLimit: 1000,
