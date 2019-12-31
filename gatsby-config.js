@@ -1,3 +1,7 @@
+/*if (process.env.NODE_ENV === "development") {
+  require("dotenv").config();
+}*/
+
 module.exports = {
   siteMetadata: {
     title: `Play and Win`,
@@ -22,10 +26,17 @@ module.exports = {
         // minify: false
       },
     },
+    /*    {
+        resolve: `gatsby-source-contentful`,
+         options: {
+           spaceId: process.env.CONTENTFUL_SPACE_ID,
+           accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+         },
+       },*/
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'http://localhost:1337',
+        apiURL: 'http://109.236.81.180:1337',
         contentTypes: [ // List of the Content Types you want to be able to request from Gatsby.
           'article',
           'user'
