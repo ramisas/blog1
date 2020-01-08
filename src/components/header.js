@@ -69,6 +69,10 @@ class Header extends React.Component {
               <Link to="/courses" className={classes.link}>
                 <Button color="inherit">Courses</Button>
               </Link>
+
+              <Link to="/iframe" className={classes.link}>
+                <Button color="inherit">Iframe</Button>
+              </Link>
             </div>
           </Toolbar>
         </AppBar>

@@ -10,9 +10,7 @@ import BlogItem from "../components/FrontPageTabs"
 import { withStyles, withTheme } from "@material-ui/core/styles"
 import Button from "@material-ui/core/Button"
 import Typography from '@material-ui/core/Typography'
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+
 
 
 const styles = theme => ({
@@ -57,27 +55,27 @@ const styles = theme => ({
 })
 
 
-const IndexPage = ({ data }) => (
+const IndexPage = ({ data, classes }) => (
   <Layout>
     <SEO title="Welcome to" keywords={[`Courses`, `Training`, `react`]} />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
     <p>Now go build something great.</p>
-    <ul>
+    <Grid container spacing={24}  className={classes.mainBlogArea}>
       {data.allStrapiArticle.edges.map(document => (
-        <li key={document.node.id}>
+        <Grid item xs={8} key={document.node.id}>
           <h2>
             <Link to={`/${document.node.id}`}>{document.node.title}</Link>
           </h2>
           <Img fixed={document.node.image.childImageSharp.fixed}/>
           <p>{document.node.content}</p>
-        </li>
+        </Grid>
       ))}
-    </ul>
+    </Grid>
   </Layout>
 )
 
-export default IndexPage
+export default withStyles(styles)(IndexPage)
 
 export const pageQuery = graphql`  
   query IndexQuery {
